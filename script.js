@@ -25,6 +25,15 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
   btnsOpenModal[i].addEventListener('click', openModal);
 }
 
-btnCloseModal.addEventListener('click', closeModal);
+// close modal buttons & actions
 
+// close button click event
+btnCloseModal.addEventListener('click', closeModal);
+// overlay click even
 overlay.addEventListener('click', closeModal);
+// escape key press event
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
